@@ -1,8 +1,10 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Reflection;
+using Web.Buisness.PipelineBehaviors;
 using WebBuisness;
 using WebBuisness.Infrastructure;
 using WebBuisness.Queries;
@@ -15,6 +17,7 @@ namespace Web.APi
     {
         public Startup(IConfiguration configuration)
         {
+            //Pipeline Behavior 
             Configuration = configuration;
         }
 
@@ -36,7 +39,8 @@ namespace Web.APi
             //services.AddMediatR(typeof(DemoLibraryMediatREntrypoint).Assembly);
             //services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
             services.AddApplication();
-
+            services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Web.Buisness.Validations;
 using WebBuisness.Commands;
 using WebBuisness.Models;
 using WebBuisness.Queries;
@@ -40,13 +41,10 @@ namespace Web.APi.Controllers
         [Route("Create")]
         public async Task<UiPageType> Create([FromBody] UiPageType uiPageType)
         {
-            var validator = new UiPageTypeValidator();
-            var result = validator.Validate(uiPageType);
-            if (result.IsValid)
-            {
+            
                 var model = new UiPageTypeCreateCommand(uiPageType.Name);
                 return await _mediator.Send(model);
-            }
+            
             //or we can pass list of error messages using result.Errors like requestResult
             return null;
         }
