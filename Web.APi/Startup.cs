@@ -9,6 +9,7 @@ using WebBuisness;
 using WebBuisness.Infrastructure;
 using WebBuisness.Queries;
 using WebBuisness.Repository;
+using AutoMapper;
 using WebBuisness.Repository.Interface;
 
 namespace Web.APi
@@ -35,7 +36,7 @@ namespace Web.APi
             services.AddSingleton<IConnectionFactory, ConnectionFactory>();
             services.AddSingleton<IUiPageTypeRepository, UiPageTypeRepository>();
 
-
+            services.AddAutoMapper(typeof(Startup));
             //services.AddMediatR(typeof(DemoLibraryMediatREntrypoint).Assembly);
             //services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
             services.AddApplication();

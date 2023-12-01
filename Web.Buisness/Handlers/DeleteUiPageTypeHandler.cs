@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebBuisness.Commands;
-using WebBuisness.Models;
+using Web.Buisness.Models;
 using WebBuisness.Queries;
 using WebBuisness.Repository.Interface;
 

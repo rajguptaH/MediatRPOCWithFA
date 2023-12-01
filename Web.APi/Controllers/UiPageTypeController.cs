@@ -1,9 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Web.Buisness.Validations;
-using WebBuisness.Commands;
-using WebBuisness.Models;
-using WebBuisness.Queries;
+using Web.Buisness.Models;
+using Web.Buisness.Features.UiPageType.Commands;
+using Web.Buisness.Features.UiPageType.Queries;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
-using WebBuisness.Commands;
 
-namespace Web.Buisness.Validations
+namespace Web.Buisness.Features.UiPageType.Commands
 {
 
     public class UiPageTypeCreateCommandValidator : AbstractValidator<UiPageTypeCreateCommand>
