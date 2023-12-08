@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using System.Data;
+using Web.Buisness.Models;
 using WebBuisness.Infrastructure;
-using WebBuisness.Models;
 using WebBuisness.Repository.Interface;
 
 namespace WebBuisness.Repository

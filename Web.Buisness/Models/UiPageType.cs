@@ -1,4 +1,4 @@
-﻿namespace WebBuisness.Models
+﻿namespace Web.Buisness.Models
 {
     public class UiPageType
     {
