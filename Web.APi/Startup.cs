@@ -33,10 +33,7 @@ namespace Web.APi
             });
             services.AddSingleton<IConnectionFactory, ConnectionFactory>();
             services.AddSingleton<IUiPageTypeRepository, UiPageTypeRepository>();
-
             services.AddAutoMapper(typeof(Startup));
-            //services.AddMediatR(typeof(DemoLibraryMediatREntrypoint).Assembly);
-            //services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
             services.AddApplication();
             services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
