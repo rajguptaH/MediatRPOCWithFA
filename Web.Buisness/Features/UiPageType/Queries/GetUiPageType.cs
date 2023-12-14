@@ -17,7 +17,14 @@ namespace Web.Buisness.Features.UiPageType
 
             public Task Authorize(Command request, CancellationToken cancellationToken, IHttpContextAccessor contex)
             {
-                throw new NotImplementedException();
+                //Check If This Rquest Is Accessable To User Or Not
+                var user = new { UserId = 10, UserName = "Rajgupta" };
+                var userClaim = new { UserId = 10, ClaimType = "application", Claim = "GetUiPageType" };
+                if (userClaim.Claim == "GetUiPageTye" && user.UserId == userClaim.UserId)
+                {
+                    return Task.CompletedTask;
+                }
+                return Task.FromException(new UnauthorizedAccessException("You are Unauthorized"));
             }
         }
         public class Handler : IRequestHandler<Command, List<Web.Buisness.Models.UiPageType>>

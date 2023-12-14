@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Web.Buisness.Models;
 using Web.Buisness.Features.UiPageType.Commands;
-using Web.Buisness.Features.UiPageType.Queries;
 using AutoMapper;
 using Web.Buisness.Features.UiPageType;
 
